@@ -3,7 +3,11 @@
     <transition name="msgbox-bounce">
       <div class="mint-msgbox" v-show="value">
         <div class="mint-msgbox-header" v-if="title !== ''">
-          <div class="mint-msgbox-title">{{ title }}</div>
+          <div class="mint-msgbox-title">
+            <i class="iconfont icon-success" style="color: #6db92a; font-size: 0.426667rem" v-if="success === true"></i>
+            <i class="iconfont icon-error" style="color: #f6394c; font-size: 0.426667rem" v-if="success === false"></i>
+            {{ title }}
+          </div>
         </div>
         <div class="mint-msgbox-content" v-if="message !== ''">
           <div class="mint-msgbox-message" v-if="typeof message === 'string'" v-html="message"></div>
@@ -104,7 +108,8 @@
       }
 
       @descendent btn {
-        line-height: 35px;
+        line-height: 1.173333rem;
+        font-size: 0.426667rem;
         display: block;
         background-color: #f5f5f5;
         flex: 1;
@@ -291,6 +296,7 @@
         title: '',
         message: '',
         type: '',
+        success: true,
         showInput: false,
         inputValue: null,
         inputPlaceholder: '',

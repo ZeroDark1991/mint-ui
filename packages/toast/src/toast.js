@@ -33,16 +33,18 @@ ToastConstructor.prototype.close = function() {
   returnAnInstance(this);
 };
 
-let Toast = (options = {}) => {
+let Toast = (options = {}, title = '') => {
   let duration = options.duration || 3000;
 
   let instance = getAnInstance();
   instance.closed = false;
   clearTimeout(instance.timer);
+  instance.title = options.title || title;
   instance.message = typeof options === 'string' ? options : options.message;
   instance.position = options.position || 'middle';
   instance.className = options.className || '';
   instance.iconClass = options.iconClass || '';
+  instance.iconColor = options.iconColor || '';
 
   document.body.appendChild(instance.$el);
   Vue.nextTick(function() {

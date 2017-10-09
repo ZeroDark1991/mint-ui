@@ -1196,7 +1196,7 @@ display: inline-block;
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  opacity: 0.7;
   background: #000;
 }
 
@@ -1552,8 +1552,11 @@ display: inline-block;
 
 .mint-toast {
     position: fixed;
-    max-width: 80%;
-    border-radius: 5px;
+    padding: 12.8px 3.2px;
+    padding: 0.8rem 0.2rem;
+    width: 68.266px;
+    width: 4.266667rem;
+    border-radius: 0.133333rem;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
     box-sizing: border-box;
@@ -1583,10 +1586,19 @@ display: inline-block;
 .mint-toast-icon {
     display: block;
     text-align: center;
-    font-size: 56px
+    font-size: 10.24px;
+    font-size: 0.64rem
 }
 .mint-toast-text {
-    font-size: 14px;
+    font-size: 5.12px;
+    font-size: 0.32rem;
+    color: #dddddd;
+    display: block;
+    text-align: center
+}
+.mint-toast-title {
+    font-size: 7.68px;
+    font-size: 0.48rem;
     display: block;
     text-align: center
 }
@@ -1721,7 +1733,10 @@ display: inline-block;
   line-height: 1.173333rem;
 }
 .mint-msgbox-btn {
-  line-height: 35px;
+  line-height: 18.773px;
+  line-height: 1.173333rem;
+  font-size: 6.826px;
+  font-size: 0.426667rem;
   display: block;
   background-color: #f5f5f5;
   -webkit-box-flex: 1;
@@ -1803,7 +1818,7 @@ display: inline-block;
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  opacity: 0.7;
   background: #000;
 }
 /* Cell Component */

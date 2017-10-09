@@ -1641,7 +1641,8 @@ display: inline-block;
   -webkit-transform: translate3d(-50%, -50%, 0);
           transform: translate3d(-50%, -50%, 0);
   background-color: #fff;
-  width: 85%;
+  width: 128px;
+  width: 8.0rem;
   border-radius: 3px;
   font-size: 16px;
   -webkit-user-select: none;
@@ -1650,14 +1651,18 @@ display: inline-block;
           backface-visibility: hidden;
   -webkit-transition: .2s;
   transition: .2s;
+  border-radius: 5px;
 }
 .mint-msgbox-header {
-  padding: 15px 0 0;
+  padding: 12.8px 0 0;
+  padding: 0.8rem 0 0;
 }
 .mint-msgbox-content {
-  padding: 10px 20px 15px;
+  padding: 6.4px 12.8px 12.8px;
+  padding: 0.4rem 0.8rem 0.8rem;
   border-bottom: 1px solid #ddd;
-  min-height: 36px;
+  min-height: 8.533px;
+  min-height: 0.533333rem;
   position: relative;
 }
 .mint-msgbox-input {
@@ -1689,27 +1694,36 @@ display: inline-block;
   text-align: center;
   padding-left: 0;
   margin-bottom: 0;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 7.68px;
+  font-size: 0.48rem;
   color: #333;
 }
 .mint-msgbox-message {
   color: #999;
   margin: 0;
   text-align: center;
-  line-height: 36px;
+  font-size: 5.12px;
+  font-size: 0.32rem;
+  line-height: 7.68px;
+  line-height: 0.48rem;
 }
 .mint-msgbox-btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
-  line-height: 40px;
+  color: #333;
+  background-color: #f5f5f5;
+  font-size: 7.68px;
+  font-size: 0.48rem;
+  height: 18.773px;
+  height: 1.173333rem;
+  line-height: 18.773px;
+  line-height: 1.173333rem;
 }
 .mint-msgbox-btn {
   line-height: 35px;
   display: block;
-  background-color: #fff;
+  background-color: #f5f5f5;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1730,11 +1744,11 @@ display: inline-block;
   color: #000;
 }
 .mint-msgbox-confirm {
-  color: #26a2ff;
+  color: #333;
   width: 50%;
 }
 .mint-msgbox-confirm:active {
-  color: #26a2ff;
+  color: #333;
 }
 .msgbox-bounce-enter {
   opacity: 0;

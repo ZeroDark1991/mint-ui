@@ -31,7 +31,7 @@
   export default {
     methods: {
       openAlert() {
-        MessageBox.alert('操作成功!', '提示');
+        MessageBox.alert(['操作成功!', 'hjwqerjwerj'], '提交成功');
       },
 
       openConfirm() {

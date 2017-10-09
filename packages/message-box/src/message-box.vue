@@ -6,7 +6,8 @@
           <div class="mint-msgbox-title">{{ title }}</div>
         </div>
         <div class="mint-msgbox-content" v-if="message !== ''">
-          <div class="mint-msgbox-message" v-html="message"></div>
+          <div class="mint-msgbox-message" v-if="typeof message === 'string'" v-html="message"></div>
+          <div class="mint-msgbox-message" v-if="Array.isArray(message)" v-for="(msg, $index) in message" :key="$index" v-html="msg"></div>
           <div class="mint-msgbox-input" v-show="showInput">
             <input v-model="inputValue" :placeholder="inputPlaceholder" ref="input">
             <div class="mint-msgbox-errormsg" :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage }}</div>
@@ -29,22 +30,23 @@
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
       background-color: #fff;
-      width: 85%;
+      width: 8.0rem;
       border-radius: 3px;
       font-size: 16px;
       -webkit-user-select: none;
       overflow: hidden;
       backface-visibility: hidden;
       transition: .2s;
+      border-radius: 5px;
 
       @descendent header {
-        padding: 15px 0 0;
+        padding: 0.8rem 0 0;
       }
 
       @descendent content {
-        padding: 10px 20px 15px;
+        padding: 0.4rem 0.8rem 0.8rem;
         border-bottom: 1px solid #ddd;
-        min-height: 36px;
+        min-height: 0.533333rem;
         position: relative;
       }
 
@@ -77,8 +79,7 @@
         text-align: center;
         padding-left: 0;
         margin-bottom: 0;
-        font-size: 16px;
-        font-weight: bold;
+        font-size: 0.48rem;
         color: #333;
       }
 
@@ -86,7 +87,8 @@
         color: #999;
         margin: 0;
         text-align: center;
-        line-height: 36px;
+        font-size: 0.32rem;
+        line-height: 0.48rem;
       }
 
       @descendent btns {
@@ -94,14 +96,17 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        height: 40px;
-        line-height: 40px;
+        color: #333;
+        background-color: #f5f5f5;
+        font-size: 0.48rem;
+        height: 1.173333rem;
+        line-height: 1.173333rem;
       }
 
       @descendent btn {
         line-height: 35px;
         display: block;
-        background-color: #fff;
+        background-color: #f5f5f5;
         flex: 1;
         margin: 0;
         border: 0;
@@ -124,10 +129,10 @@
       }
 
       @descendent confirm {
-        color: #26a2ff;
+        color: #333;
         width: 50%;
         &:active {
-         color: #26a2ff;
+         color: #333;
         }
       }
     }

@@ -208,7 +208,7 @@
         if (!options && this.$children.length < 2) return;
 
         var prevPage, nextPage, currentPage, pageWidth, offsetLeft;
-        var speed = this.speed || 300;
+        var speed = this.speed || 1000;
         var index = this.index;
         var pages = this.pages;
         var pageCount = pages.length;

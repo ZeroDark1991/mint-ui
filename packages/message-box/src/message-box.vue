@@ -74,7 +74,7 @@
 
       @descendent errormsg {
         color: red;
-        font-size: 12px;
+        font-size: 0.32rem !important;
         min-height: 18px;
         margin-top: 2px;
       }
@@ -83,7 +83,7 @@
         text-align: center;
         padding-left: 0;
         margin-bottom: 0;
-        font-size: 0.48rem;
+        font-size: 0.48rem !important;
         color: #333;
       }
 
@@ -91,7 +91,7 @@
         color: #999;
         margin: 0;
         text-align: center;
-        font-size: 0.32rem;
+        font-size: 0.32rem !important;
         line-height: 0.48rem;
       }
 
@@ -102,14 +102,14 @@
         display: flex;
         color: #333;
         background-color: #f5f5f5;
-        font-size: 0.48rem;
+        font-size: 0.48rem !important;
         height: 1.173333rem;
         line-height: 1.173333rem;
       }
 
       @descendent btn {
         line-height: 1.173333rem;
-        font-size: 0.426667rem;
+        font-size: 0.426667rem !important;
         display: block;
         background-color: #f5f5f5;
         flex: 1;

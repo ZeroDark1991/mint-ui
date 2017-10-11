@@ -4,10 +4,8 @@
 
 <script>
 const SPINNERS = [
-  'snake',
-  'double-bounce',
-  'triple-bounce',
-  'fading-circle'
+  'flake'
+  // 'snake'
 ];
 const parseSpinner = function(index) {
   if ({}.toString.call(index) === '[object Number]') {
@@ -52,10 +50,11 @@ export default {
   },
 
   components: {
-    SpinnerSnake: require('./spinner/snake.vue'),
-    SpinnerDoubleBounce: require('./spinner/double-bounce.vue'),
-    SpinnerTripleBounce: require('./spinner/triple-bounce.vue'),
-    SpinnerFadingCircle: require('./spinner/fading-circle.vue')
+    SpinnerFlake: require('./spinner/flake.vue')
+    // SpinnerSnake: require('./spinner/snake.vue')
+    // SpinnerDoubleBounce: require('./spinner/double-bounce.vue'),
+    // SpinnerTripleBounce: require('./spinner/triple-bounce.vue'),
+    // SpinnerFadingCircle: require('./spinner/fading-circle.vue')
   },
 
   props: {

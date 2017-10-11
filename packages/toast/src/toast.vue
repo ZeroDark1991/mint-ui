@@ -25,18 +25,18 @@
       @descendent icon {
         display: block;
         text-align: center;
-        font-size: 0.64rem;
+        font-size: 0.64rem !important;
       }
       
       @descendent text {
-        font-size: 0.32rem;
+        font-size: 0.32rem !important;
         color: #dddddd;
         display: block;
         text-align: center;
       }
 
       @descendent title {
-        font-size: 0.48rem;
+        font-size: 0.48rem !important;
         display: block;
         text-align: center;
       }

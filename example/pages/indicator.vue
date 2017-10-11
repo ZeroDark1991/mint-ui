@@ -36,7 +36,7 @@
       },
 
       openIndicatorWithSpinner() {
-        Indicator.open({ spinnerType: 'fading-circle' });
+        Indicator.open({ spinnerType: 'snake' });
         setTimeout(() => Indicator.close(), 2000);
       },
 

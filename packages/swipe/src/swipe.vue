@@ -91,6 +91,11 @@
         default: 300
       },
 
+      slideTense: {
+        type: Number,
+        default: 2
+      },
+
       defaultIndex: {
         type: Number,
         default: 0
@@ -104,6 +109,14 @@
       continuous: {
         type: Boolean,
         default: true
+      },
+
+      prevEnd: {
+        type: Function
+      },
+
+      nextEnd: {
+        type: Function
       },
 
       showIndicators: {
@@ -406,10 +419,21 @@
         if (dragState.prevPage && towards === 'prev') {
           this.translate(dragState.prevPage, offsetLeft - dragState.pageWidth);
         }
-        this.translate(dragState.dragPage, offsetLeft);
         if (dragState.nextPage && towards === 'next') {
           this.translate(dragState.nextPage, offsetLeft + dragState.pageWidth);
         }
+
+        if (!this.continuous) {
+          if (this.index === 0 && towards === 'prev') {
+            // 不循环时第一页无法拉动
+            return;
+          }
+          if (this.index === this.pages.length - 1 && towards === 'next') {
+            // 不循环时最后一页无法拉动
+            return;
+          }
+        }
+        this.translate(dragState.dragPage, offsetLeft);
       },
 
       doOnTouchEnd() {
@@ -438,13 +462,19 @@
 
         if (dragDuration < 300 && dragState.currentLeft === undefined) return;
 
-        if (dragDuration < 300 || Math.abs(offsetLeft) > pageWidth / 2) {
+        if (dragDuration < 300 || Math.abs(offsetLeft) > pageWidth / this.slideTense) {
           towards = offsetLeft < 0 ? 'next' : 'prev';
         }
 
         if (!this.continuous) {
-          if ((index === 0 && towards === 'prev') || (index === pageCount - 1 && towards === 'next')) {
+          if ((index === 0 && towards === 'prev')) {
             towards = null;
+            this.prevEnd && this.prevEnd();
+          }
+
+          if ((index === pageCount - 1 && towards === 'next')) {
+            towards = null;
+            this.nextEnd && this.nextEnd();
           }
         }
 

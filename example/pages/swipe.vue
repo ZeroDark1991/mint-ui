@@ -16,7 +16,7 @@
     </mt-swipe>
 
     <p class="page-swipe-desc">取消自动播放</p>
-    <mt-swipe :auto="0">
+    <mt-swipe :auto="0" :continuous="false" :prevEnd="prevEnd">
       <mt-swipe-item class="slide1">1</mt-swipe-item>
       <mt-swipe-item class="slide2">2</mt-swipe-item>
       <mt-swipe-item class="slide3">3</mt-swipe-item>
@@ -35,7 +35,15 @@
     </mt-swipe>
   </div>
 </template>
-
+<script>
+export default {
+  methods: {
+    prevEnd() {
+      console.log('end !!!');
+    }
+  }
+};
+</script>
 <style>
   @component-namespace page {
     @component swipe {

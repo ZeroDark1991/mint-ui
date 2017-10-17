@@ -31,13 +31,19 @@
   export default {
     methods: {
       openToast() {
-        Toast('提示信息');
+        Toast({
+          title: '哈哈',
+          message: '沙发上打发斯蒂芬',
+          iconClass: 'icon-error',
+          iconColor: 'green',
+          duration: 100000
+        });
       },
 
       openToastWithIcon() {
         Toast({
           message: '操作成功',
-          iconClass: 'mintui mintui-success'
+          iconClass: 'icon-success'
         });
       },
 

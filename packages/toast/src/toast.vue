@@ -2,7 +2,7 @@
   <transition name="mint-toast-pop">
     <div class="mint-toast" v-show="visible" :class="customClass">
       <i class="mint-toast-icon iconfont" :style="{ color: iconColor }" :class="iconClass" v-if="iconClass !== ''"></i>
-      <i class="mint-toast-icon-back"></i>
+      <div class="mint-toast-icon-back"></div>
       <span class="mint-toast-title" :style="{ 'padding-top':  iconClass ? '0.4rem' : '0' }">{{ title }}</span>
       <span class="mint-toast-text" :style="{ 'padding-top':  title ? '0.133333rem' : '0' }">{{ message }}</span>
     </div>
@@ -27,7 +27,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 0.5rem;
+        top: 0.6rem;
         border-radius: 50%;
         text-align: center;
         font-size: 0.64rem !important;
@@ -40,6 +40,7 @@
         width: 0.5rem;
         height: 0.5rem;
         background: #fff;
+        margin-top: .1rem;
       }
 
       @descendent text {

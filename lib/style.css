@@ -1512,8 +1512,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 8px;
-    top: 0.5rem;
+    top: 9.6px;
+    top: 0.6rem;
     border-radius: 50%;
     text-align: center;
     font-size: 10.24px !important;
@@ -1527,7 +1527,9 @@
     width: 0.5rem;
     height: 8px;
     height: 0.5rem;
-    background: #fff
+    background: #fff;
+    margin-top: 1.6px;
+    margin-top: .1rem
 }
 .mint-toast-text {
     font-size: 5.12px !important;

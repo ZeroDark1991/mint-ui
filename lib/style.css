@@ -1512,8 +1512,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 9.6px;
-    top: 0.6rem;
+    top: 8px;
+    top: 0.5rem;
     border-radius: 50%;
     text-align: center;
     font-size: 10.24px !important;

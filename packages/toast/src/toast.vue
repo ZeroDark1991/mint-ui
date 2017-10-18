@@ -27,7 +27,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 0.6rem;
+        top: 0.5rem;
         border-radius: 50%;
         text-align: center;
         font-size: 0.64rem !important;

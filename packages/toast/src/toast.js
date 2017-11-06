@@ -45,6 +45,7 @@ let Toast = (options = {}, title = '') => {
   instance.className = options.className || '';
   instance.iconClass = options.iconClass || '';
   instance.iconColor = options.iconColor || '';
+  instance.iconUrl = options.iconUrl || '';
 
   document.body.appendChild(instance.$el);
   Vue.nextTick(function() {

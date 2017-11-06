@@ -1,29 +1,29 @@
 <template>
   <div class="mint-msgbox-wrapper">
-    <transition name="msgbox-bounce">
-      <div class="mint-msgbox" v-show="value">
-        <div class="mint-msgbox-header" v-if="title !== ''">
-          <div class="mint-msgbox-title">
-            <i class="iconfont icon-success" style="color: #6db92a; font-size: 0.48rem; margin-right: 0.05rem" v-if="success === true"></i>
-            <i class="iconfont icon-error" style="color: #f6394c; font-size: 0.48rem; margin-right: 0.05rem" v-if="success === false"></i>
-            <i class="iconfont icon-warning" style="color: #f6394c; font-size: 0.48rem; margin-right: 0.05rem" v-if="warning === true"></i>
-            {{ title }}
-          </div>
-        </div>
-        <div class="mint-msgbox-content" v-if="message !== ''">
-          <div class="mint-msgbox-message" v-if="typeof message === 'string'" v-html="message"></div>
-          <div class="mint-msgbox-message" v-if="Array.isArray(message)" v-for="(msg, $index) in message" :key="$index" v-html="msg"></div>
-          <div class="mint-msgbox-input" v-show="showInput">
-            <input v-model="inputValue" :placeholder="inputPlaceholder" ref="input">
-            <div class="mint-msgbox-errormsg" :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage }}</div>
-          </div>
-        </div>
-        <div class="mint-msgbox-btns">
-          <button :class="[ cancelButtonClasses ]" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>
-          <button :class="[ confirmButtonClasses ]" v-show="showConfirmButton" @click="handleAction('confirm')">{{ confirmButtonText }}</button>
+    <!-- <transition name="msgbox-bounce"> -->
+    <div class="mint-msgbox" v-show="value">
+      <div class="mint-msgbox-header" v-if="title !== ''">
+        <div class="mint-msgbox-title">
+          <i class="iconfont icon-success" style="color: #6db92a; font-size: 0.48rem; margin-right: 0.05rem" v-if="success === true"></i>
+          <i class="iconfont icon-error" style="color: #f6394c; font-size: 0.48rem; margin-right: 0.05rem" v-if="success === false"></i>
+          <i class="iconfont icon-warning" style="color: #f6394c; font-size: 0.48rem; margin-right: 0.05rem" v-if="warning === true"></i>
+          {{ title }}
         </div>
       </div>
-    </transition>
+      <div class="mint-msgbox-content" v-if="message !== ''">
+        <div class="mint-msgbox-message" v-if="typeof message === 'string'" v-html="message"></div>
+        <div class="mint-msgbox-message" v-if="Array.isArray(message)" v-for="(msg, $index) in message" :key="$index" v-html="msg"></div>
+        <div class="mint-msgbox-input" v-show="showInput">
+          <input v-model="inputValue" :placeholder="inputPlaceholder" ref="input">
+          <div class="mint-msgbox-errormsg" :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage }}</div>
+        </div>
+      </div>
+      <div class="mint-msgbox-btns">
+        <button :class="[ cancelButtonClasses ]" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>
+        <button :class="[ confirmButtonClasses ]" v-show="showConfirmButton" @click="handleAction('confirm')">{{ confirmButtonText }}</button>
+      </div>
+    </div>
+    <!-- </transition> -->
   </div>
 </template>
 

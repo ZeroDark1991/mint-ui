@@ -2,7 +2,7 @@
   <transition name="mint-toast-pop">
     <div class="mint-toast" v-show="visible" :class="customClass">
       <div style="text-align: center">
-        <img :src="iconUrl" alt="" width="0.32rem">
+        <img :src="iconUrl" alt="" style="width: 0.32rem">
       </div>
       <!-- <i class="mint-toast-icon iconfont" :class="iconClass" v-if="iconClass !== ''"></i> -->
       <!-- <div class="mint-toast-icon-back"></div> -->

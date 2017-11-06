@@ -32,10 +32,10 @@
     methods: {
       openToast() {
         Toast({
-          title: '哈哈',
+          // title: '哈哈',
           message: '沙发上打发斯蒂芬',
-          iconClass: 'icon-error',
-          iconColor: 'green',
+          iconClass: 'icon-warning',
+          // iconColor: 'green',
           duration: 100000
         });
       },

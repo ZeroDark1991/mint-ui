@@ -1,10 +1,13 @@
 <template>
   <transition name="mint-toast-pop">
     <div class="mint-toast" v-show="visible" :class="customClass">
-      <i class="mint-toast-icon iconfont" :style="{ color: iconColor }" :class="iconClass" v-if="iconClass !== ''"></i>
-      <div class="mint-toast-icon-back"></div>
+      <div style="text-align: center">
+        <img :src="iconUrl" alt="" width="0.32rem">
+      </div>
+      <!-- <i class="mint-toast-icon iconfont" :class="iconClass" v-if="iconClass !== ''"></i> -->
+      <!-- <div class="mint-toast-icon-back"></div> -->
       <span class="mint-toast-title" :style="{ 'padding-top':  iconClass ? '0.4rem' : '0' }">{{ title }}</span>
-      <span class="mint-toast-text" :style="{ 'padding-top':  title ? '0.133333rem' : '0' }">{{ message }}</span>
+      <span class="mint-toast-text" :style="{ 'padding-top':  title ? '0.133333rem' : '0.4rem' }">{{ message }}</span>
     </div>
   </transition>
 </template>
@@ -99,6 +102,9 @@
         default: ''
       },
       iconColor: {
+        type: String
+      },
+      iconUrl: {
         type: String
       }
     },

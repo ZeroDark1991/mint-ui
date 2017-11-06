@@ -34,7 +34,7 @@
         MessageBox({
           title: '操作成功',
           message: ['hello', 'msgBox'],
-          success: true
+          warning: true
         });
       },
 

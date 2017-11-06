@@ -6,6 +6,7 @@ var defaults = {
   message: '',
   type: '',
   success: '',
+  warning: '',
   showInput: false,
   showClose: true,
   modalFade: false,

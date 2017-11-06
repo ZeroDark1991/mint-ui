@@ -6,6 +6,7 @@
           <div class="mint-msgbox-title">
             <i class="iconfont icon-success" style="color: #6db92a; font-size: 0.426667rem" v-if="success === true"></i>
             <i class="iconfont icon-error" style="color: #f6394c; font-size: 0.426667rem" v-if="success === false"></i>
+            <i class="iconfont icon-warning" style="color: #f6394c; font-size: 0.426667rem" v-if="warning === true"></i>
             {{ title }}
           </div>
         </div>

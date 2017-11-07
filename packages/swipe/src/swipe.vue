@@ -88,12 +88,12 @@
     props: {
       speed: {
         type: Number,
-        default: 150
+        default: 200
       },
 
       slideTense: {
         type: Number,
-        default: 2
+        default: 3
       },
 
       defaultIndex: {
@@ -527,7 +527,7 @@
     mounted() {
       this.ready = true;
 
-      this.initTimer();
+      // this.initTimer();
 
       this.reInitPages();
 
@@ -555,7 +555,7 @@
           return;
         }
         if (!this.dragging) return;
-        this.initTimer();
+        // this.initTimer();
         this.doOnTouchEnd(event);
         this.dragging = false;
       });

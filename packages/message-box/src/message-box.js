@@ -7,6 +7,7 @@ var defaults = {
   type: '',
   success: '',
   warning: '',
+  iconUrl: '',
   showInput: false,
   showClose: true,
   modalFade: false,

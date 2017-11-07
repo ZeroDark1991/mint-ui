@@ -7,8 +7,8 @@
           <i class="iconfont icon-success" style="color: #6db92a; font-size: 0.48rem; margin-right: 0.05rem" v-if="success === true"></i>
           <i class="iconfont icon-error" style="color: #f6394c; font-size: 0.48rem; margin-right: 0.05rem" v-if="success === false"></i>
           <i class="iconfont icon-warning" style="color: #f6394c; font-size: 0.48rem; margin-right: 0.05rem" v-if="warning === true"></i>
-          <img :src="iconUrl" style="width: 0.64rem; margin-right: 0.05rem" alt="">
-          {{ title }}
+          <img :src="iconUrl" style="width: 0.56rem; margin-right: 0.05rem; vertical-align: -0.1rem" alt="">
+          <span>{{ title }}</span>
         </div>
       </div>
       <div class="mint-msgbox-content" v-if="message !== ''">

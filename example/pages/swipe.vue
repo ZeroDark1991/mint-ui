@@ -14,9 +14,9 @@
       <mt-swipe-item class="slide2">2</mt-swipe-item>
       <mt-swipe-item class="slide3">3</mt-swipe-item>
     </mt-swipe>
-
+    <p>{{index}}</p>
     <p class="page-swipe-desc">取消自动播放</p>
-    <mt-swipe :auto="0" :continuous="false" :prevEnd="prevEnd">
+    <mt-swipe :auto="0" :continuous="false" :prevEnd="prevEnd" @change="handleChange">
       <mt-swipe-item class="slide1">1</mt-swipe-item>
       <mt-swipe-item class="slide2">2</mt-swipe-item>
       <mt-swipe-item class="slide3">3</mt-swipe-item>
@@ -37,9 +37,18 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      index: 1
+    };
+  },
   methods: {
     prevEnd() {
       console.log('end !!!');
+    },
+    handleChange(index) {
+      console.log(index);
+      this.index = index;
     }
   }
 };

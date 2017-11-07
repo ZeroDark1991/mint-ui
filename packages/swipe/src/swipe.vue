@@ -88,7 +88,7 @@
     props: {
       speed: {
         type: Number,
-        default: 300
+        default: 150
       },
 
       slideTense: {
@@ -142,7 +142,7 @@
 
     watch: {
       index(newIndex) {
-        this.$emit('change', newIndex);
+        // this.$emit('change', newIndex);
       }
     },
 
@@ -165,7 +165,7 @@
         }, 100);
       },
 
-      translate(element, offset, speed, callback) {
+      translate(element, offset, speed, callback, newIndex) {
         if (speed) {
           this.animating = true;
           element.style.webkitTransition = '-webkit-transform ' + speed + 'ms ease-in-out';
@@ -174,6 +174,8 @@
           }, 50);
 
           var called = false;
+
+          if (newIndex) { this.$emit('change', newIndex); }
 
           var transitionEndCallback = () => {
             if (called) return;
@@ -187,7 +189,7 @@
           };
 
           once(element, 'webkitTransitionEnd', transitionEndCallback);
-          setTimeout(transitionEndCallback, speed + 100); // webkitTransitionEnd maybe not fire on lower version android.
+          setTimeout(transitionEndCallback, speed + 50); // webkitTransitionEnd maybe not fire on lower version android.
         } else {
           element.style.webkitTransition = '';
           element.style.webkitTransform = `translate3d(${offset}px, 0, 0)`;
@@ -221,7 +223,7 @@
         if (!options && this.$children.length < 2) return;
 
         var prevPage, nextPage, currentPage, pageWidth, offsetLeft;
-        var speed = this.speed || 1000;
+        var speed = this.speed || 500;
         var index = this.index;
         var pages = this.pages;
         var pageCount = pages.length;
@@ -300,20 +302,20 @@
           if (towards === 'next') {
             this.isDone = true;
             this.before(currentPage);
-            this.translate(currentPage, -pageWidth, speed, callback);
+            this.translate(currentPage, -pageWidth, speed, callback, newIndex);
             if (nextPage) {
               this.translate(nextPage, 0, speed);
             }
           } else if (towards === 'prev') {
             this.isDone = true;
             this.before(currentPage);
-            this.translate(currentPage, pageWidth, speed, callback);
+            this.translate(currentPage, pageWidth, speed, callback, newIndex);
             if (prevPage) {
               this.translate(prevPage, 0, speed);
             }
           } else {
             this.isDone = false;
-            this.translate(currentPage, 0, speed, callback);
+            this.translate(currentPage, 0, speed, callback, newIndex);
             if (typeof offsetLeft !== 'undefined') {
               if (prevPage && offsetLeft > 0) {
                 this.translate(prevPage, pageWidth * -1, speed);

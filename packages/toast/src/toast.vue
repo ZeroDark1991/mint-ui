@@ -2,12 +2,12 @@
   <transition name="mint-toast-pop">
     <div class="mint-toast" v-show="visible" :class="customClass">
       <div style="text-align: center">
-        <img :src="iconUrl" alt="" style="width: 0.32rem">
+        <img :src="iconUrl" alt="" style="width: 0.64rem">
       </div>
       <!-- <i class="mint-toast-icon iconfont" :class="iconClass" v-if="iconClass !== ''"></i> -->
       <!-- <div class="mint-toast-icon-back"></div> -->
-      <span class="mint-toast-title" :style="{ 'padding-top':  iconClass ? '0.4rem' : '0' }">{{ title }}</span>
-      <span class="mint-toast-text" :style="{ 'padding-top':  title ? '0.133333rem' : '0.4rem' }">{{ message }}</span>
+      <span class="mint-toast-title" :style="{ 'padding-top':  iconClass ? '0.32rem' : '0' }">{{ title }}</span>
+      <span class="mint-toast-text" :style="{ 'padding-top':  title ? '0.133333rem' : '0.32rem' }">{{ message }}</span>
     </div>
   </transition>
 </template>

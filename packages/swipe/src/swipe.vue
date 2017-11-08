@@ -175,7 +175,7 @@
 
           var called = false;
 
-          if (newIndex) { this.$emit('change', newIndex); }
+          if (newIndex !== undefined) { this.$emit('change', newIndex); }
 
           var transitionEndCallback = () => {
             if (called) return;

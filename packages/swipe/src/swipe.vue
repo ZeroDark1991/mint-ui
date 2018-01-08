@@ -88,7 +88,7 @@
     props: {
       speed: {
         type: Number,
-        default: 200
+        default: 220
       },
 
       slideTense: {
@@ -217,7 +217,85 @@
 
         this.pages = pages;
       },
+      doJump(index) {
+        if (this.$children.length < 2) return;
+        var prevPage, nextPage, currentPage, pageWidth, offsetLeft;
+        var speed = this.speed || 500;
+        var currnetIndex = this.index;
+        var pages = this.pages;
+        var pageCount = pages.length;
 
+        if (index < 0 || index > pageCount - 1) return;
+        if (index === currnetIndex) return;
+
+        console.log(index);
+        pageWidth = this.$el.clientWidth;
+        currentPage = pages[currnetIndex];
+        prevPage = pages[index - 1];
+        nextPage = pages[index + 1];
+
+        if (this.continuous && pages.length > 1) {
+          if (!prevPage) {
+            prevPage = pages[pages.length - 1];
+          }
+          if (!nextPage) {
+            nextPage = pages[0];
+          }
+        }
+        if (prevPage) {
+          prevPage.style.display = 'block';
+          this.translate(prevPage, -pageWidth);
+        }
+        if (nextPage) {
+          nextPage.style.display = 'block';
+          this.translate(nextPage, pageWidth);
+        }
+
+        var newIndex = index;
+
+        var oldPage = this.$children[currnetIndex].$el;
+
+        var callback = () => {
+          if (newIndex !== undefined) {
+            var newPage = this.$children[newIndex].$el;
+            removeClass(oldPage, 'is-active');
+            addClass(newPage, 'is-active');
+
+            this.index = newIndex;
+          }
+          if (this.isDone) {
+            this.end();
+          }
+
+          if (prevPage) {
+            prevPage.style.display = '';
+          }
+
+          if (nextPage) {
+            nextPage.style.display = '';
+          }
+        };
+
+        setTimeout(() => {
+          this.isDone = false;
+          this.translate(currentPage, 0, speed, callback, newIndex);
+          if (typeof offsetLeft !== 'undefined') {
+            if (prevPage && offsetLeft > 0) {
+              this.translate(prevPage, pageWidth * -1, speed);
+            }
+            if (nextPage && offsetLeft < 0) {
+              this.translate(nextPage, pageWidth, speed);
+            }
+          } else {
+            if (prevPage) {
+              this.translate(prevPage, pageWidth * -1, speed);
+            }
+            if (nextPage) {
+              this.translate(nextPage, pageWidth, speed);
+            }
+          }
+        }, 10);
+      },
       doAnimate(towards, options) {
         if (this.$children.length === 0) return;
         if (!options && this.$children.length < 2) return;
@@ -342,7 +420,9 @@
       prev() {
         this.doAnimate('prev');
       },
-
+      jumpToIndex(index) {
+        this.doJump(index);
+      },
       before() {
         this.$emit('before', this.index);
       },

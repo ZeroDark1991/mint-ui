@@ -16,7 +16,8 @@
     </mt-swipe>
     <p>{{index}}</p>
     <p class="page-swipe-desc">取消自动播放</p>
-    <mt-swipe :auto="0" :continuous="false" :prevEnd="prevEnd" @change="handleChange">
+    <button @click="handleJump(1)">goto</button>
+    <mt-swipe ref="test" :auto="0" :continuous="false" :prevEnd="prevEnd" @change="handleChange">
       <mt-swipe-item class="slide1">1</mt-swipe-item>
       <mt-swipe-item class="slide2">2</mt-swipe-item>
       <mt-swipe-item class="slide3">3</mt-swipe-item>
@@ -49,6 +50,9 @@ export default {
     handleChange(index) {
       console.log(index);
       this.index = index;
+    },
+    handleJump(index) {
+      this.$refs.test.jumpToIndex(index);
     }
   }
 };
